@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main: hsl(217, 54%, 11%);
+    --Very-dark-blue-card: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Very-dark-blue-main);
+}
+
+.container{
+    background-color: var(--Very-dark-blue-card);
+    border-radius: 8px;
+    width: 300px;
+    height: 500px;
+    margin: 60px auto;
+    box-shadow: 10px 10px 15px #00000094;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.container:hover .image::before,
+.container:hover .image::after{
+    display: block;
+}
+
+.container .image{
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    position: relative;
+    transition:all 0.5s ease;
+}
+
+.container .image::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--Cyan);
+    opacity: 0.5;
+    border-radius: 8px;
+    display: none;
+}
+
+.container .image::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(images/icon-view.svg);
+    display: none;
+}
+
+.container .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.container .info{
+    margin-top: 18px;
+}
+
+.container .title{
+    color: var(--White);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: 0.5s ease;
+}
+
+.container:hover .info .title{
+    color: var(--Cyan);
+}
+
+.info .text{
+    line-height: 1.4;
+    color: var(--Soft-blue);
+    margin-bottom: 15px;
+}
+
+.info .date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date span{
+    width: 36.6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date .eth{
+    color: var(--Cyan);
+    font-weight: bold;
+}
+
+.date .clock{
+    color: var(--Soft-blue);
+}
+
+.container .avatar{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--Very-dark-blue-line);
+    margin-top: 10px;
+}
+
+.container .avatar img{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.container .avatar .text {
+    font-weight: bold;
+    color: var(--Soft-blue);
+}
+
+.container .avatar .text span {
+    color: var(--White);
+    transition: 0.5s ease;
+}
+
+.container:hover .avatar .text span{
+    color: var(--Cyan);
+}
